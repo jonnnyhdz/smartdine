@@ -14,7 +14,7 @@ export const mockMenu = [
     description: "Arroz cremoso con champiñones, parmesano y aceite de trufa blanca.",
     price: 260,
     time: 12,
-    img: "https://images.unsplash.com/photo-1601924582971-3b37da4f0e00?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ export const mockMenu = [
     description: "Salmón noruego al horno con glaseado de miel y limón, sobre puré de papa trufado.",
     price: 310,
     time: 18,
-    img: "https://images.unsplash.com/photo-1617196034796-69b9f0f4e68c?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,
@@ -30,7 +30,7 @@ export const mockMenu = [
     description: "Clásica con aderezo artesanal, pollo grillé y crutones dorados.",
     price: 180,
     time: 8,
-    img: "https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 5,
@@ -38,7 +38,7 @@ export const mockMenu = [
     description: "Postre italiano con mascarpone, cacao y café espresso.",
     price: 140,
     time: 5,
-    img: "https://images.unsplash.com/photo-1604608686983-497c0044b27e?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 6,
@@ -46,6 +46,6 @@ export const mockMenu = [
     description: "Refrescante mezcla de limón natural, romero y jarabe de agave.",
     price: 85,
     time: 2,
-    img: "https://images.unsplash.com/photo-1600891963933-b50b5c07f2b8?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
   },
 ];

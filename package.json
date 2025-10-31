@@ -21,6 +21,7 @@
     "tailwind-variants": "^3.1.1"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.14.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -10,14 +10,14 @@ export function FeaturedMenu() {
     },
     {
       name: "Risotto de hongos",
-      img: "https://images.unsplash.com/photo-1601924582971-3b37da4f0e00?auto=format&fit=crop&w=800&q=80",
+      img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
       price: 250,
     },
     {
       name: "Salmón glaseado",
-      img: "https://images.unsplash.com/photo-1617196034796-69b9f0f4e68c?auto=format&fit=crop&w=800&q=80",
-      price: 310,
-    },
+        img: "https://images.unsplash.com/photo-1617196034796-69b9f0f4e68c?auto=format&fit=crop&w=800&q=80",
+        price: 310,
+        },
   ];
 
   return (

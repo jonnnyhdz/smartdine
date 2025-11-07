@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   SmartphoneNfc,
   Loader2,
+  BellRing,
 } from "lucide-react";
 
 interface Item {
@@ -47,7 +48,12 @@ export function PaymentOptions({ onFinish, orderItems = [] }: PaymentOptionsProp
         setDone(true);
       }, 3000);
     } else if (type === "cash") {
-      setDone(true);
+      // Simula una notificación al personal de caja
+      setProcessing(true);
+      setTimeout(() => {
+        setProcessing(false);
+        setDone(true);
+      }, 2500);
     }
   };
 
@@ -61,7 +67,7 @@ export function PaymentOptions({ onFinish, orderItems = [] }: PaymentOptionsProp
         Método de pago
       </h2>
 
-      {/* === Etapa 1: Elegir método === */}
+      {/* === Etapa 1: Selección del método === */}
       {method === "none" && !done && (
         <>
           <p className="text-gray-300 mb-8 text-lg">
@@ -87,22 +93,53 @@ export function PaymentOptions({ onFinish, orderItems = [] }: PaymentOptionsProp
         </>
       )}
 
-      {/* === Etapa 2: Pago en efectivo === */}
-      {method === "cash" && !done && (
+      {/* === Procesando pago en efectivo === */}
+      <AnimatePresence>
+        {processing && method === "cash" && (
+          <motion.div
+            key="cash-processing"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="mt-10 text-gray-300 flex flex-col items-center"
+          >
+            <motion.div
+              animate={{
+                scale: [1, 1.15, 1],
+                opacity: [0.7, 1, 0.7],
+              }}
+              transition={{ duration: 1.3, repeat: Infinity }}
+              className="w-24 h-24 rounded-full border-4 border-amber-500 flex items-center justify-center mb-6"
+            >
+              <BellRing className="w-8 h-8 text-amber-400" />
+            </motion.div>
+            <p className="text-lg flex items-center gap-2">
+              Notificando al personal...
+              <Loader2 className="animate-spin w-5 h-5 text-amber-400" />
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* === Confirmación de pago en efectivo === */}
+      {method === "cash" && done && !processing && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="mt-10 text-gray-300"
         >
           <Wallet className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-          <p className="text-lg">
-            Por favor, dirígete a la caja para completar tu pago.
+          <p className="text-lg font-medium text-gray-100">
+            Se ha notificado a nuestro personal.
           </p>
           <p className="text-gray-400 mt-2">
-            Nuestro personal te atenderá enseguida.
+            Por favor, dirígete a la caja para completar tu pago.
+          </p>
+          <p className="text-amber-500 mt-4 text-sm italic">
+            Te estarán esperando en caja. ¡Gracias por tu compra!
           </p>
           <Button
-            onClick={() => setDone(true)}
+            onClick={onFinish}
             className="mt-8 bg-amber-500 text-black hover:bg-amber-400 px-8 py-4 rounded-xl"
           >
             Finalizar
@@ -110,7 +147,7 @@ export function PaymentOptions({ onFinish, orderItems = [] }: PaymentOptionsProp
         </motion.div>
       )}
 
-      {/* === Etapa 3: Pago con tarjeta === */}
+      {/* === Pago con tarjeta === */}
       {method === "card" && !processing && !done && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -283,9 +320,9 @@ export function PaymentOptions({ onFinish, orderItems = [] }: PaymentOptionsProp
         )}
       </AnimatePresence>
 
-      {/* === Animación NFC === */}
+      {/* === Procesando pago con tarjeta === */}
       <AnimatePresence>
-        {processing && (
+        {processing && method === "card" && (
           <motion.div
             key="nfc"
             className="flex flex-col items-center mt-10"
@@ -314,7 +351,7 @@ export function PaymentOptions({ onFinish, orderItems = [] }: PaymentOptionsProp
       </AnimatePresence>
 
       {/* === Pago completado === */}
-      {done && (
+      {done && method === "card" && (
         <motion.div
           className="mt-12 text-center"
           initial={{ opacity: 0 }}

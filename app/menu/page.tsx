@@ -47,7 +47,7 @@ export default function MenuPage() {
         className="text-center mb-12"
       >
         <h1 className="text-5xl font-bold mb-4 text-amber-500 flex justify-center items-center gap-3">
-          <Utensils className="w-10 h-10 text-amber-400" /> Menú Interactivo
+          Menú Interactivo<Utensils className="w-10 h-10 text-amber-500" />
         </h1>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
           Explora nuestras especialidades y realiza tu pedido directamente desde la mesa.

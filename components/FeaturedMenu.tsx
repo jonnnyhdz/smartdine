@@ -15,7 +15,7 @@ export function FeaturedMenu() {
     },
     {
       name: "Salmón glaseado",
-        img: "https://images.unsplash.com/photo-1617196034796-69b9f0f4e68c?auto=format&fit=crop&w=800&q=80",
+        img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
         price: 310,
         },
   ];
@@ -39,7 +39,7 @@ export function FeaturedMenu() {
               className="object-cover w-full h-56"
             />
             <div className="p-6">
-              <h3 className="text-2xl font-semibold mb-2">{dish.name}</h3>
+              <h3 className="text-2xl text-gray-300 font-semibold mb-2">{dish.name}</h3>
               <p className="text-gray-400 mb-3">${dish.price}</p>
             </div>
           </div>

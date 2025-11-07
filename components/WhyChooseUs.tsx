@@ -31,7 +31,7 @@ export function WhyChooseUs() {
             className="bg-black/60 rounded-xl p-8 border border-gray-800 hover:scale-105 transition"
           >
             <div className="flex justify-center mb-4">{f.icon}</div>
-            <h3 className="text-2xl font-semibold mb-3">{f.title}</h3>
+            <h3 className="text-2xl text-gray-400 font-semibold mb-3">{f.title}</h3>
             <p className="text-gray-400">{f.desc}</p>
           </div>
         ))}
